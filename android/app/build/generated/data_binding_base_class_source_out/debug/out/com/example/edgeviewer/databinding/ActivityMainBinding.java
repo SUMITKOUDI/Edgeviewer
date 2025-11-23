@@ -2,9 +2,9 @@
 package com.example.edgeviewer.databinding;
 
 import android.view.LayoutInflater;
+import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -14,15 +14,19 @@ import java.lang.Override;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final TextureView rootView;
 
-  private ActivityMainBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final TextureView textureView;
+
+  private ActivityMainBinding(@NonNull TextureView rootView, @NonNull TextureView textureView) {
     this.rootView = rootView;
+    this.textureView = textureView;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public TextureView getRoot() {
     return rootView;
   }
 
@@ -47,6 +51,8 @@ public final class ActivityMainBinding implements ViewBinding {
       throw new NullPointerException("rootView");
     }
 
-    return new ActivityMainBinding((FrameLayout) rootView);
+    TextureView textureView = (TextureView) rootView;
+
+    return new ActivityMainBinding((TextureView) rootView, textureView);
   }
 }
