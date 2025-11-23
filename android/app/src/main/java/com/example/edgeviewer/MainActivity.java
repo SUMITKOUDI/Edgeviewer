@@ -1,5 +1,5 @@
 package com.example.edgeviewer;
-
+import com.example.edgeviewer.NativeBridge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
