@@ -1,0 +1,11 @@
+{
+  "name": "edge-viewer-web",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "start": "npx http-server ./dist -c-1"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
