@@ -5,28 +5,47 @@ import android.view.LayoutInflater;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.edgeviewer.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final SurfaceView rootView;
+  private final ConstraintLayout rootView;
+
+  @NonNull
+  public final LinearLayout bottomBar;
+
+  @NonNull
+  public final Button btnToggle;
 
   @NonNull
   public final SurfaceView glSurface;
 
-  private ActivityMainBinding(@NonNull SurfaceView rootView, @NonNull SurfaceView glSurface) {
+  @NonNull
+  public final TextView tvStats;
+
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout bottomBar,
+      @NonNull Button btnToggle, @NonNull SurfaceView glSurface, @NonNull TextView tvStats) {
     this.rootView = rootView;
+    this.bottomBar = bottomBar;
+    this.btnToggle = btnToggle;
     this.glSurface = glSurface;
+    this.tvStats = tvStats;
   }
 
   @Override
   @NonNull
-  public SurfaceView getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -47,12 +66,38 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @NonNull
   public static ActivityMainBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.bottomBar;
+      LinearLayout bottomBar = ViewBindings.findChildViewById(rootView, id);
+      if (bottomBar == null) {
+        break missingId;
+      }
+
+      id = R.id.btnToggle;
+      Button btnToggle = ViewBindings.findChildViewById(rootView, id);
+      if (btnToggle == null) {
+        break missingId;
+      }
+
+      id = R.id.glSurface;
+      SurfaceView glSurface = ViewBindings.findChildViewById(rootView, id);
+      if (glSurface == null) {
+        break missingId;
+      }
+
+      id = R.id.tvStats;
+      TextView tvStats = ViewBindings.findChildViewById(rootView, id);
+      if (tvStats == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, bottomBar, btnToggle, glSurface,
+          tvStats);
     }
-
-    SurfaceView glSurface = (SurfaceView) rootView;
-
-    return new ActivityMainBinding((SurfaceView) rootView, glSurface);
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

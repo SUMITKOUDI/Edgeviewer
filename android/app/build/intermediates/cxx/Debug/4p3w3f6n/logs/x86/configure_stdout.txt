@@ -1,0 +1,4 @@
+-- Found OpenCV: C:/Users/shubh/Downloads/opencv-4.12.0-android-sdk/OpenCV-android-sdk (found version "4.12.0") 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/shubh/Downloads/sumiii/android/app/.cxx/Debug/4p3w3f6n/x86

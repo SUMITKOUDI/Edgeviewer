@@ -6,5 +6,7 @@ public class NativeBridge {
         System.loadLibrary("native-lib");
     }
 
-    public static native float processFrame(byte[] gray, byte[] rgba);
+    public static native void init(int width, int height);
+
+    public static native float processFrame(byte[] grayInput, byte[] rgbaOutput);
 }
