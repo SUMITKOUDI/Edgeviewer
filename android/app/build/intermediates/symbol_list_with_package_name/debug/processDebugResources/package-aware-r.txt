@@ -3270,6 +3270,7 @@ id frost
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
+id glSurface
 id gone
 id graph
 id graph_wrap
@@ -3525,7 +3526,6 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
-id textureView
 id time
 id title
 id titleDividerNoCustom

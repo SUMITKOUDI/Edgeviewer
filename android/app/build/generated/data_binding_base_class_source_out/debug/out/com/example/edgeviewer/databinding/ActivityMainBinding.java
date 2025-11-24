@@ -2,7 +2,7 @@
 package com.example.edgeviewer.databinding;
 
 import android.view.LayoutInflater;
-import android.view.TextureView;
+import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
@@ -14,19 +14,19 @@ import java.lang.Override;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final TextureView rootView;
+  private final SurfaceView rootView;
 
   @NonNull
-  public final TextureView textureView;
+  public final SurfaceView glSurface;
 
-  private ActivityMainBinding(@NonNull TextureView rootView, @NonNull TextureView textureView) {
+  private ActivityMainBinding(@NonNull SurfaceView rootView, @NonNull SurfaceView glSurface) {
     this.rootView = rootView;
-    this.textureView = textureView;
+    this.glSurface = glSurface;
   }
 
   @Override
   @NonNull
-  public TextureView getRoot() {
+  public SurfaceView getRoot() {
     return rootView;
   }
 
@@ -51,8 +51,8 @@ public final class ActivityMainBinding implements ViewBinding {
       throw new NullPointerException("rootView");
     }
 
-    TextureView textureView = (TextureView) rootView;
+    SurfaceView glSurface = (SurfaceView) rootView;
 
-    return new ActivityMainBinding((TextureView) rootView, textureView);
+    return new ActivityMainBinding((SurfaceView) rootView, glSurface);
   }
 }
