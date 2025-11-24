@@ -8,7 +8,7 @@ add_library(
         native-lib.cpp)
 
 # ✅ SET OPENCV PATH HERE (IMPORTANT!)
-set(OpenCV_DIR "C:/Users/shubh/Downloads/opencv-4.12.0-android-sdk/OpenCV-android-sdk/sdk/native/jni")
+set(OpenCV_DIR "/opencv-4.12.0-android-sdk/OpenCV-android-sdk/sdk/native/jni")
 
 find_package(OpenCV REQUIRED)
 
